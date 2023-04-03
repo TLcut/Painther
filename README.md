@@ -3,5 +3,5 @@
 
 # ```Painther```
 > ### An online drawing board where everyone can draw at the same time
-![網頁擷取_3-4-2023_203535_127 0 0 1](https://user-images.githubusercontent.com/113696966/229511457-4124988d-4e86-424a-89c0-7ad2ee731661.jpeg)
+![網頁擷取_3-4-2023_205511_tlcut github io](https://user-images.githubusercontent.com/113696966/229516220-716559e6-a007-4e8c-bd26-c2acfd2fd142.jpeg)
 </div>
