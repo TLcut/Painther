@@ -1,5 +1,3 @@
-// db end
-
 const version = 1;
 
 const Tools = ["brush","rubber","color","clear"];
@@ -11,8 +9,7 @@ for(let tool of Tools){
         <input type="color" id="color-toggler">
         <li class="tool-space"><button class="tool ${tool}"><label for="color-toggler"><img src="./public/image/${tool}.png" width="50px"></label></button></li>
         `
-    }
-    else{
+    canvas
         tools.innerHTML += `
         <li class="tool-space"><button class="tool ${tool}"><img src="./public/image/${tool}.png" width="50px" id="${tool}"></button></li>
         `
@@ -52,7 +49,7 @@ tools.addEventListener("change", e =>{
     ctx.strokeStyle = e.target.value;
 })
 
-//轉文字為圖畫 成功
+//change words into painting
 function draw_password(){
     // clear canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -100,22 +97,20 @@ canvas.addEventListener('mouseup', e => {
 canvas.addEventListener('mousemove', draw);
 
 //mobile phone control
-document.body.addEventListener("touchstart", function (e) {
-    if (e.target == canvas) {
-        e.preventDefault();
+canvas.body.addEventListener("touchstart", ()=> (e) {
+    isPainting = true;
+    //start $
+    if(NowData.length === 0){
+        NowData += `${e.clientX},${e.clientY},${ctx.strokeStyle}`
+    }else{
+        NowData += `$${e.clientX},${e.clientY},${ctx.strokeStyle}`
     }
 }, false);
 
-document.body.addEventListener("touchend", function (e) {
-    if (e.target == canvas) {
-        e.preventDefault();
-    }
+canvas.body.addEventListener("touchend",  (e) => {
+    isPainting = false;
 }, false);
 
-document.body.addEventListener("touchmove", function (e) {
-    if (e.target == canvas) {
-        e.preventDefault();
-    }
-}, false);
+canvas.body.addEventListener("touchmove", draw);
 
 console.log(version);
