@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="icon" href="public/image/paint.png">
+    <title>Painther</title>
+</head>
+<body>
+    <script defer src="/__/firebase/9.19.1/firebase-app-compat.js"></script>
+
+    <script defer src="/__/firebase/9.19.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.19.1/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+    <div class="center"><canvas class="board" id="board"></canvas></div>
+    <input type="checkbox"id="toggler">
+    <label for="toggler"><div class="hamberger-controller">
+        <span></span>
+        <span></span>
+    </div></label>
+    <ul class="tools" id="tools"></ul>
+
+    <script src="./src/board.js"></script>
+</body>
+</html>
