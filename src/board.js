@@ -90,14 +90,14 @@ canvas.addEventListener('mousedown', (e) => {
     }
 });
 
-canvas.addEventListener('mouseup', e => {
+canvas.addEventListener('mouseup', (e) => {
     isPainting = false;
 });
 
 canvas.addEventListener('mousemove', draw);
 
 //mobile phone control
-canvas.body.addEventListener("touchstart", ()=> (e) {
+canvas.body.addEventListener("touchstart", (e)=> {
     isPainting = true;
     //start $
     if(NowData.length === 0){
@@ -107,7 +107,7 @@ canvas.body.addEventListener("touchstart", ()=> (e) {
     }
 }, false);
 
-canvas.body.addEventListener("touchend",  (e) => {
+canvas.body.addEventListener("touchend", (e) => {
     isPainting = false;
 }, false);
 
