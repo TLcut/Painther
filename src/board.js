@@ -1,19 +1,3 @@
-import { initializeApp } from "firebase/app";
-import {getDatabase , ref, set ,onValue} from "firebase/database";
-
-
-const firebaseConfig = {
-    apiKey: "AIzaSyAlHzz3jrPgfQUS10ocoVHU5AcX4Wp6ZqU",
-    authDomain: "painther-b9685.firebaseapp.com",
-    projectId: "painther-b9685",
-    storageBucket: "painther-b9685.appspot.com",
-    messagingSenderId: "940250973500",
-    appId: "1:940250973500:web:271a863b7de99a8025ca39",
-    measurementId: "G-12NWBX08XT"
-};
-
-const app = initializeApp(firebaseConfig);
-
 const Tools = ["brush","rubber","color","clear"];
 let NowData = "";
 
@@ -21,12 +5,12 @@ for(let tool of Tools){
     if(tool == "color"){
         tools.innerHTML += `
         <input type="color" id="color-toggler">
-        <li class="tool-space"><button class="tool ${tool}"><label for="color-toggler"><img src="./../public/image/${tool}.png" width="50px"></label></button></li>
+        <li class="tool-space"><button class="tool ${tool}"><label for="color-toggler"><img src="./public/image/${tool}.png" width="50px"></label></button></li>
         `
     }
     else{
         tools.innerHTML += `
-        <li class="tool-space"><button class="tool ${tool}"><img src="./../public/image/${tool}.png" width="50px" id="${tool}"></button></li>
+        <li class="tool-space"><button class="tool ${tool}"><img src="./public/image/${tool}.png" width="50px" id="${tool}"></button></li>
         `
     }
 }
@@ -48,7 +32,8 @@ let startY;
 tools.addEventListener("click", e => {
     switch(e.target.id){
         case "clear":
-            NowData = ""
+            NowData = "";
+            draw_password();
             break;
         case "rubber":
             ctx.strokeStyle = "white"
@@ -65,7 +50,9 @@ tools.addEventListener("change", e =>{
 
 //轉文字為圖畫 成功
 function draw_password(){
-    console.log(NowData.split("$"))
+    // clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // main draw
     for(one_line of NowData.split("$")){
         ctx.lineWidth = lineWidth;
         ctx.lineCap = 'round';
