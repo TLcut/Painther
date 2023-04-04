@@ -1,4 +1,4 @@
-const version = 2;
+const version = 1;
 
 const Tools = ["brush","rubber","color","clear"];
 let NowData = "";
@@ -9,7 +9,7 @@ for(let tool of Tools){
         <input type="color" id="color-toggler">
         <li class="tool-space"><button class="tool ${tool}"><label for="color-toggler"><img src="./public/image/${tool}.png" width="50px"></label></button></li>
         `
-    canvas
+    }else{
         tools.innerHTML += `
         <li class="tool-space"><button class="tool ${tool}"><img src="./public/image/${tool}.png" width="50px" id="${tool}"></button></li>
         `
@@ -90,7 +90,7 @@ canvas.addEventListener('mousedown', (e) => {
     }
 });
 
-canvas.addEventListener('mouseup', (e) => {
+canvas.addEventListener('mouseup', e => {
     isPainting = false;
 });
 
