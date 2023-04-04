@@ -97,7 +97,7 @@ canvas.addEventListener('mouseup', e => {
 canvas.addEventListener('mousemove', draw);
 
 //mobile phone control
-canvas.body.addEventListener("touchstart", (e)=> {
+canvas.addEventListener("touchstart", (e)=> {
     isPainting = true;
     //start $
     if(NowData.length === 0){
@@ -107,10 +107,10 @@ canvas.body.addEventListener("touchstart", (e)=> {
     }
 }, false);
 
-canvas.body.addEventListener("touchend", (e) => {
+canvas.addEventListener("touchend", (e) => {
     isPainting = false;
 }, false);
 
-canvas.body.addEventListener("touchmove", draw);
+canvas.addEventListener("touchmove", draw);
 
 console.log(version);
